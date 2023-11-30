@@ -1,7 +1,6 @@
-"use strict";
-
+'use strict';
 /** Database setup for jobly. */
-const { Client } = require("pg");
+const { Client } = require('pg');
 const dotenv = require('dotenv');
 const { getDatabaseUri } = require('./config');
 dotenv.config();
