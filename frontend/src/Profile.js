@@ -34,8 +34,6 @@ function Profile() {
 		}
 	};
 
-	console.log(formData);
-
 	return (
 		<form className="ProfileForm" onSubmit={handleSubmit}>
 			<h1 className="ProfileForm-title">Edit User Details</h1>

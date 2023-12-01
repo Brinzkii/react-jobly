@@ -9,8 +9,6 @@ function CompanyDetails() {
 	const [company, setCompany] = useState(undefined);
 	let { handle } = useParams();
 
-	console.log(`HANDLE: ${handle}`);
-
 	useEffect(() => {
 		async function getDetails(handle) {
 			let company = await JoblyAPI.getCompany(handle);
@@ -18,7 +16,6 @@ function CompanyDetails() {
 		}
 		getDetails(handle);
 	}, [handle]);
-	console.log(company);
 	if (company === undefined) {
 		return <div>Loading....</div>;
 	} else {
