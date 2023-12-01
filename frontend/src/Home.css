@@ -1,0 +1,29 @@
+.Home {
+    text-align: center;
+    padding-top: 250px;
+    color: white;
+}
+
+.Home-login-button, .Home-register-button {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: .15cm;
+    border: none;
+    height: 35px;
+    width: 85px;
+    margin-top: 25px;
+}
+
+.Home-login-button {
+    margin-right: 60px;
+}
+
+.Home-register-button {
+    margin-left: 60px;
+}
+
+.Home-login-button:hover, .Home-register-button:hover {
+    cursor: pointer;
+}

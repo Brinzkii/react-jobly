@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import JoblyAPI from './JoblyAPI';
+import './Forms.css';
 
 function RegisterForm({ updateUser }) {
 	const INITIAL_DATA = {
@@ -23,7 +24,6 @@ function RegisterForm({ updateUser }) {
 		evt.preventDefault();
 		try {
 			const token = await JoblyAPI.register(formData);
-			JoblyAPI.token = token;
 			updateUser({ username: formData.username, token });
 			navigate('/');
 		} catch (err) {
@@ -33,22 +33,33 @@ function RegisterForm({ updateUser }) {
 
 	return (
 		<form className="RegisterForm" onSubmit={handleSubmit}>
-			<label htmlFor="username">Username:</label>
-			<input name="username" onChange={handleChange} />
+			<h1 className="RegisterForm-title">Sign Up</h1>
+			<label htmlFor="username" className="RegisterForm-label">
+				Username:
+			</label>
+			<input name="username" onChange={handleChange} className="RegisterForm-input" />
 
-			<label htmlFor="password">Password:</label>
-			<input name="password" type="password" onChange={handleChange} />
+			<label htmlFor="password" className="RegisterForm-label">
+				Password:
+			</label>
+			<input name="password" type="password" onChange={handleChange} className="RegisterForm-input" />
 
-			<label htmlFor="firstName">First Name:</label>
-			<input name="firstName" onChange={handleChange} />
+			<label htmlFor="firstName" className="RegisterForm-label">
+				First Name:
+			</label>
+			<input name="firstName" onChange={handleChange} className="RegisterForm-input" />
 
-			<label htmlFor="lastName">Last Name:</label>
-			<input name="lastName" onChange={handleChange} />
+			<label htmlFor="lastName" className="RegisterForm-label">
+				Last Name:
+			</label>
+			<input name="lastName" onChange={handleChange} className="RegisterForm-input" />
 
-			<label htmlFor="email">Email:</label>
-			<input name="email" type="email" onChange={handleChange} />
+			<label htmlFor="email" className="RegisterForm-label">
+				Email:
+			</label>
+			<input name="email" type="email" onChange={handleChange} className="RegisterForm-input" />
 
-			<button>Register</button>
+			<button className="RegisterForm-button">Register</button>
 		</form>
 	);
 }

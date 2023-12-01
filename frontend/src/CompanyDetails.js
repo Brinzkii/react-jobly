@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import JoblyAPI from './JoblyAPI';
 import List from './List';
+import './List.css';
+import './CompanyDetails.css';
 
 function CompanyDetails() {
 	const [company, setCompany] = useState(undefined);

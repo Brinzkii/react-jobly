@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import JoblyAPI from './JoblyAPI';
+import './Forms.css';
 
 function LoginForm({ updateUser }) {
 	const INITIAL_DATA = {
@@ -20,8 +21,9 @@ function LoginForm({ updateUser }) {
 		evt.preventDefault();
 		try {
 			const token = await JoblyAPI.login(formData);
-			JoblyAPI.token = token;
 			updateUser({ username: formData.username, token });
+			const user = await JoblyAPI.getUserDetails(localStorage.username);
+			updateUser({ applications: user.applications });
 			navigate('/');
 		} catch (err) {
 			console.error(err);
@@ -30,13 +32,18 @@ function LoginForm({ updateUser }) {
 
 	return (
 		<form className="LoginForm" onSubmit={handleSubmit}>
-			<label htmlFor="username">Username:</label>
-			<input name="username" onChange={handleChange} />
+			<h1 className="LoginForm-title">Login</h1>
+			<label htmlFor="username" className="LoginForm-label">
+				Username:
+			</label>
+			<input name="username" onChange={handleChange} className="LoginForm-input" />
 
-			<label htmlFor="password">Password:</label>
-			<input name="password" type="password" onChange={handleChange} />
+			<label htmlFor="password" className="LoginForm-label">
+				Password:
+			</label>
+			<input name="password" type="password" onChange={handleChange} className="LoginForm-input" />
 
-			<button>Login</button>
+			<button className="LoginForm-button">Login</button>
 		</form>
 	);
 }

@@ -1,0 +1,58 @@
+.Job {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: .05cm;
+    width: 700px;
+    height: max-content;
+    padding: 10px 10px 10px 15px;
+    margin-bottom: 15px;
+}
+
+.Job-title {
+    font-size: 16px;
+    font-weight: 500;
+    height: 15px;
+    margin: 5px 0px 10px 0px;
+}
+
+.Job-company {
+    font-size: 16px;
+    font-weight: 400;
+    height: 15px;
+    margin: 5px 0px 5px 0px;
+}
+
+.Job-detail {
+    font-size: 14px;
+    height: 10px;
+    font-weight: 400;
+}
+
+.Job-apply-button {
+    font-size: 16px;
+    font-weight: bold;
+    height: 35px;
+    width: 75px;
+    color: white;
+    border-radius: .15cm;
+    border: none;
+    background-color: tomato;
+    align-self: center;
+}   
+
+.Job-apply-button:hover {
+    cursor: pointer;
+}
+
+.Job-apply-button-disabled {
+    font-size: 16px;
+    font-weight: bold;
+    height: 35px;
+    width: 75px;
+    color: mediumseagreen;
+    border-radius: .15cm;
+    border: none;
+    background-color: rgb(218, 218, 218);
+    align-self: center;
+}

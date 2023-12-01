@@ -1,0 +1,20 @@
+.Company {
+    background-color: white;
+    border-radius: .05cm;
+    width: 700px;
+    height: max-content;
+    padding: 10px 10px 10px 15px;
+    margin-bottom: 15px;
+}
+
+.Company-name {
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.Company-description {
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+}

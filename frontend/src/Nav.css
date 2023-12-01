@@ -1,0 +1,34 @@
+.Navbar {
+    display: flex;
+    min-width: 100vw;
+    height: 60px;
+    padding-right: -75px;
+    padding-left: 15px;
+    background-color: white;
+    justify-content: space-between;;
+}
+.Navbar-brand {
+    align-self: center;
+    font-size: 28px;
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+.Navbar-links-container {
+    display: flex;
+    justify-content: end;
+    align-self: center;
+    margin-right: 50px
+}
+
+.Navbar-link {
+    font-size: 18px;
+    color: gray;
+    text-decoration: none;
+    margin: 0px 0px 0px 75px;
+}
+
+.Navbar-link.active {
+    font-weight: bold;
+    color: black;
+}

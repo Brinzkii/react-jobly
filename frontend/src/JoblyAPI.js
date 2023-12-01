@@ -12,7 +12,7 @@ class JoblyAPI {
 		//there are multiple ways to pass an authorization token, this ishow you pass it in the header.
 		//this has been provided to show you another way to pass the token.you are only expected to read this code for this project.
 		const url = `${BASE_API_URL}/${endpoint}`;
-		const headers = { Authorization: `Bearer ${JoblyAPI.token}` };
+		const headers = { Authorization: `Bearer ${localStorage.token}` };
 		const params = method === 'get' ? data : {};
 
 		try {
@@ -38,6 +38,20 @@ class JoblyAPI {
 	static async login({ username, password }) {
 		let res = await this.request(`auth/token`, { username, password }, 'post');
 		return res.token;
+	}
+
+	/** Get user details */
+
+	static async getUserDetails(username) {
+		let res = await this.request(`users/${username}`);
+		return res.user;
+	}
+
+	/** Update user details */
+
+	static async updateUserDetails({ username, firstName, lastName, email }) {
+		let res = await this.request(`users/${username}`, { firstName, lastName, email }, 'patch');
+		return res.user;
 	}
 
 	/** Get list of all companies */
@@ -69,9 +83,9 @@ class JoblyAPI {
 	}
 }
 
-JoblyAPI.token =
-	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ' +
-	'SI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0.' +
-	'FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc';
+// JoblyAPI.token =
+// 	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ' +
+// 	'SI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0.' +
+// 	'FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc';
 
 export default JoblyAPI;
